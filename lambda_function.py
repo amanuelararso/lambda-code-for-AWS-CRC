@@ -2,6 +2,7 @@ import json
 import boto3
 from decimal import Decimal
 
+#updated code
 def decimal_default(obj):
     if isinstance(obj, Decimal):
         return float(obj)
@@ -32,3 +33,4 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps({'visitor_count': new_count}, default=decimal_default)
     }
+
