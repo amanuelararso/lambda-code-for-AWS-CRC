@@ -10,7 +10,7 @@ def decimal_default(obj):
 
 def lambda_handler(event, context):
     dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('view-count')
+    table = dynamodb.Table('visitor-count')
     
     # Initialize the visitor count if it doesn't exist
     response = table.get_item(Key={'id': 'visitor_count'})
